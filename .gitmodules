@@ -1,3 +1,6 @@
 [submodule "compiler-explorer"]
 	path = compiler-explorer
 	url = git@github.com:SBird1337/compiler-explorer.git
+[submodule "agbcc"]
+	path = agbcc
+	url = git@github.com:pret/agbcc.git
