@@ -1,0 +1,32 @@
+kind: pipeline
+name: default
+
+steps:
+
+- name: submodules
+  image: alpine/git
+  commands:
+  - git submodule update --init --recursive
+
+- name: build
+  privileged: true
+  image: docker
+  commands:
+  - ./build.sh
+  volumes:
+  - name: docker
+    path: /var/run/docker.sock
+
+- name: publish
+  privileged: true
+  image: docker
+  commands:
+  - ./publish.sh
+  volumes:
+  - name: docker
+    path: /var/run/docker.sock
+    
+volumes:
+  - name: docker
+    host:
+      path: /var/run/docker.sock
