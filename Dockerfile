@@ -10,4 +10,4 @@ RUN cd /pretrepos/pokeemerald && make tools && cd /pretrepos/pokeruby && make to
 RUN mkdir -p /frontends
 COPY pycc.py /frontends/
 COPY compiler-explorer /ce/
-ENTRYPOINT cd /ce && make EXTRA_ARGS='--language C --host cexplore.karathan.at'
+ENTRYPOINT cd /ce && make EXTRA_ARGS='--language C'
