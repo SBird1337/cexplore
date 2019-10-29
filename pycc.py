@@ -45,7 +45,6 @@ if args.preproc and args.charmap:
     subprocess.call([args.cc1] + remainder[0:-1], stdin=pprocess.stdout)
 else:
     with open(source+'.i', 'r') as a:
-        print("hi²")
         subprocess.call([args.cc1] + remainder[0:-1], stdin=a)
 
 if os.path.exists(source+'.i'):
