@@ -10,4 +10,6 @@ RUN cd /pretrepos/pokeemerald && make tools && cd /pretrepos/pokeruby && make to
 RUN mkdir -p /frontends
 COPY pycc.py /frontends/
 COPY compiler-explorer /ce/
+RUN mkdir -p /scripts/
+COPY update-repos.sh /scripts/
 ENTRYPOINT cd /ce && make EXTRA_ARGS='--language C'
