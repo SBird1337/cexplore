@@ -9,6 +9,7 @@ RUN mkdir -p /pretrepos && cd /pretrepos && git clone https://github.com/pret/po
 RUN cd /pretrepos/pokeemerald && make tools && cd /pretrepos/pokeruby && make tools && cd /pretrepos/pokefirered && make tools
 RUN mkdir -p /frontends
 COPY pycc.py /frontends/
+COPY pycat.py /frontends/
 COPY compiler-explorer /ce/
 RUN mkdir -p /scripts/
 COPY update-repos.sh /scripts/
