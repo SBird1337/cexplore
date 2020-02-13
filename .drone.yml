@@ -51,7 +51,7 @@ steps:
   privileged: true
   image: docker
   commands:
-  - ./publish.sh
+  - ./publish_staging.sh
   volumes:
   - name: docker
     path: /var/run/docker.sock
