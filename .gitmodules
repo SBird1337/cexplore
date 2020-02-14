@@ -4,3 +4,7 @@
 [submodule "agbcc"]
 	path = agbcc
 	url = https://github.com/pret/agbcc.git
+[submodule "agbcc_arm"]
+	path = agbcc_arm
+	url = https://github.com/camthesaxman/agbcc
+	branch = arm_support
