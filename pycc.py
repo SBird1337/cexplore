@@ -10,7 +10,7 @@ parser = argparse.ArgumentParser(description='Simplified CC1 frontend')
 parser.add_argument('--qinclude', action='append', help = 'Include Paths for iquote', required = False, dest='qinclude')
 parser.add_argument('--binclude', action='append', help = 'Include Paths for Block Include', required = False, dest='binclude')
 parser.add_argument('--cc1', action='store', help = '<Required> cc1 Path', required = False, dest='cc1')
-parser.add_argument('--version', action='store_true', help = 'Get Version String of cc1', required = False, dest='version')
+parser.add_argument('--version', action='store', help = 'Get Version String of cc1', required = False, dest='version')
 parser.add_argument('--preproc', action='store', help ='preproc path', required = False, dest='preproc')
 parser.add_argument('--charmap', action='store', help ='preproc charmap', required = False)
 
@@ -22,8 +22,8 @@ agbcc = agbccpath+ "agbcc/bin/agbcc"
 preproc = repopath+ "tools/preproc/preproc"
 charmap = repopath+ "charmap.txt"
 '''
-if args.version:
-    print("pycc frontend for agbcc1")
+if args.version is not None:
+    print("pycc frontend for agbcc1 " + args.version)
     quit()
     
 source = remainder[-1]
