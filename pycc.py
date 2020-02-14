@@ -22,8 +22,9 @@ agbcc = agbccpath+ "agbcc/bin/agbcc"
 preproc = repopath+ "tools/preproc/preproc"
 charmap = repopath+ "charmap.txt"
 '''
-if args.version is not None:
-    print("pycc frontend for agbcc1 " + args.version)
+if args.version:
+    git_proc = subprocess.run(['git', '--git-dir='+args.version+'/.git', 'rev-parse', '--short', 'HEAD'], stdout=subprocess.PIPE)
+    sys.stdout.write("pycc frontend for agbcc1 " + os.path.basename(args.version) + "@" + git_proc.stdout.decode('utf-8'))
     quit()
     
 source = remainder[-1]
