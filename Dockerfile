@@ -5,8 +5,8 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 COPY agbcc /agbcc
 RUN cd /agbcc && ./build.sh && ./install.sh /agbcc_build
-RUN mkdir -p /pretrepos && cd /pretrepos && git clone https://github.com/pret/pokeemerald && git clone https://github.com/pret/pokeruby && git clone https://github.com/pret/pokefirered
-RUN cd /pretrepos/pokeemerald && make tools && cd /pretrepos/pokeruby && make tools && cd /pretrepos/pokefirered && make tools
+RUN mkdir -p /pretrepos && cd /pretrepos && git clone https://github.com/pret/pokeemerald && git clone https://github.com/pret/pokeruby && git clone https://github.com/pret/pokefirered && git clone https://github.com/laqieer/fireemblem8u.git
+RUN cd /pretrepos/pokeemerald && make tools && cd /pretrepos/pokeruby && make tools && cd /pretrepos/pokefirered && make tools && cd /pretrepos/fireemblem8u && make tools
 RUN mkdir -p /frontends
 COPY pycc.py /frontends/
 COPY pycat.py /frontends/
