@@ -35,7 +35,7 @@ with open(source, 'r') as f_src, open(args.destination, 'w') as f_dst:
                     operands = operand.split(rx_ry, 1)
                     operand = operands[0]
                     for i in range(x, y + 1):
-                        operand += f'r{i}, '
+                        operand += 'r{}, '.format(i)
                     operand = operand[:-2] + operands[1]
                 dec_num = re.search(r'#\-?\d+', operand, re.I)
                 if dec_num:
@@ -44,16 +44,16 @@ with open(source, 'r') as f_src, open(args.destination, 'w') as f_dst:
                         value = int(dec_num[1:])
                         if value != 0:
                             s = operand.split(dec_num, 1)
-                            operand = f'{s[0]}#0x{value:x}{s[1]}'
+                            operand = '{}#0x{:x}{}'.format(s[0], value, s[1])
                     else:
                         value = int(dec_num[2:])
                         if value != 0:
                             s = operand.split(dec_num, 1)
-                            operand = f'{s[0]}#-0x{value:x}{s[1]}'
+                            operand = '{}#-0x{:x}{}'.format(s[0], value, s[1])
                 if opcode in ('add', 'sub', 'lsl', 'lsr', 'asr', 'ror', 'and', 'orr', 'eor'):
                     operands = operand.split(',')
                     if len(operands) == 2:
                         operand = operands[0] + ', ' + operand
-                line2 = f'\t{opcode}\t{operand}'
+                line2 = '\t{}\t{}'.format(opcode, operand)
         f_dst.write(line2 + '\n')
 
