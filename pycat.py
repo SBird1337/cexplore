@@ -21,6 +21,7 @@ source = remainder[-1]
 
 with open(source, 'r') as f_src, open(args.destination, 'w') as f_dst:
     for line in f_src:
+        line2 = line
         if not args.no_parse:
             line2 = line.strip()
             if line2 and ':' not in line2 and not line2.startswith('@') and not line2.startswith('//'):
