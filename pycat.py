@@ -10,6 +10,7 @@ parser = argparse.ArgumentParser(description='Simplified "compiler" frontend, ca
 parser.add_argument('--version', action='store_true', help = 'Get Version String of cc1', required = False, dest='version')
 parser.add_argument('-o', action='store', help = 'Output Assembly file', required = False, dest='destination')
 parser.add_argument('--no-parse', action='store_true', help = 'Do not parse the output', required = False, dest='no_parse')
+parser.add_argument('-S', action='store_true', help='will be dropped', required = False, dest='as_only')
 args, remainder = parser.parse_known_args()
 
 if args.version:
@@ -20,8 +21,8 @@ source = remainder[-1]
 
 with open(source, 'r') as f_src, open(args.destination, 'w') as f_dst:
     for line in f_src:
-        line2 = line.strip()
         if not args.no_parse:
+            line2 = line.strip()
             if line2 and ':' not in line2 and not line2.startswith('@') and not line2.startswith('//'):
                 instruction = line2.split(maxsplit=1)
                 if len(instruction) > 1:
