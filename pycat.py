@@ -59,5 +59,8 @@ with open(source, 'r') as f_src, open(args.destination, 'w') as f_dst:
                         if len(operands) == 2:
                             operand = operands[0] + ', ' + operand
                     line2 = '\t{}\t{}'.format(opcode, operand)
-        f_dst.write(line2 + '\n')
+        if not args.no_parse:
+            f_dst.write(line2 + '\n')
+        else:
+            f_dst.write(line2)
 
