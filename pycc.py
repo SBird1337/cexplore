@@ -13,6 +13,7 @@ parser.add_argument('--cc1', action='store', help = '<Required> cc1 Path', requi
 parser.add_argument('--version', action='store', help = 'Get Version String of cc1', required = False, dest='version')
 parser.add_argument('--preproc', action='store', help ='preproc path', required = False, dest='preproc')
 parser.add_argument('--charmap', action='store', help ='preproc charmap', required = False)
+parser.add_argument('-S', action='store_true', help='will be dropped', required = False, dest='as_only')
 
 args, remainder = parser.parse_known_args()
 '''

@@ -12,3 +12,6 @@
 	path = new_agbcc
 	url = https://github.com/jiangzhengwenjz/agbcc
 	branch = new_newlib_pret
+[submodule "arm-elf-gcc-3.0-buildscript"]
+	path = arm-elf-gcc-3.0-buildscript
+	url = https://github.com/SBird1337/arm-elf-gcc-3.0-buildscript
