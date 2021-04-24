@@ -8,3 +8,7 @@
 	path = agbcc_arm
 	url = https://github.com/camthesaxman/agbcc
 	branch = arm_support
+[submodule "new_agbcc"]
+	path = new_agbcc
+	url = https://github.com/jiangzhengwenjz/agbcc
+	branch = new_newlib_pret
