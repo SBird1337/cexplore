@@ -28,7 +28,7 @@ with open(source, 'r') as f_src, open(args.destination, 'w') as f_dst:
                 instruction = line2.split(maxsplit=1)
                 if len(instruction) > 1:
                     opcode, operand = instruction
-                    if opcode.endswith('s') and (opcode.startswith('bic') or not opcode.startswith('b')): # exclude opcodes like bxcs/bls/biccs, but bics is fine
+                    if opcode.endswith('s') and (opcode == 'bics' or not opcode.startswith('b')): # exclude opcodes like bxcs/bls/biccs, but bics is fine
                         opcode = opcode[:-1]
                     rx_ry = re.search(r'r\d{1,2}-r\d{1,2}', operand, re.I)
                     if rx_ry:
