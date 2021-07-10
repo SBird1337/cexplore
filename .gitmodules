@@ -8,3 +8,7 @@
 	path = agbcc_arm
 	url = https://github.com/camthesaxman/agbcc
 	branch = arm_support
+[submodule "agbcp"]
+	path = agbcp
+	url = https://github.com/jiangzhengwenjz/agbcc/
+	branch = cp
