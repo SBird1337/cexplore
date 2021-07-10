@@ -15,7 +15,3 @@
 [submodule "arm-elf-gcc-3.0-buildscript"]
 	path = arm-elf-gcc-3.0-buildscript
 	url = https://github.com/SBird1337/arm-elf-gcc-3.0-buildscript
-[submodule "agbcp"]
-	path = agbcp
-	url = https://github.com/jiangzhengwenjz/agbcc
-	branch = cp
