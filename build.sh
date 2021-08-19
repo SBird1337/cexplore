@@ -1,4 +1,4 @@
 #!/bin/sh
 
-mv c.local.properties compiler-explorer/etc/config/
+rsync -u c.local.properties compiler-explorer/etc/config/
 docker build -t karathan/cexplore:latest .
