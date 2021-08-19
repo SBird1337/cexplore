@@ -13,8 +13,8 @@ RUN cd /new_agbcc && ./build.sh && mkdir -p /agbcc_build/tools/agbcc && mkdir -p
 RUN cd /agbcc_arm && ./build.sh && ./install.sh /agbcc_build
 RUN cd /agbcp && ./build.sh && ./install.sh /agbcc_build
 RUN mkdir -p /usr/gcc3/ && cd /gcc3-build && ./build.sh
-RUN mkdir -p /pretrepos && cd /pretrepos && git clone https://github.com/pret/pokeemerald && git clone https://github.com/pret/pokeruby && git clone https://github.com/pret/pokefirered && git clone https://github.com/Kurausukun/mother3
-RUN cd /pretrepos/pokeemerald && make tools && cd /pretrepos/pokeruby && make tools && cd /pretrepos/pokefirered && make tools && cd /pretrepos/mother3 && make tools
+RUN mkdir -p /pretrepos && cd /pretrepos && git clone https://github.com/pret/pokeemerald && git clone https://github.com/pret/pokeruby && git clone https://github.com/pret/pokefirered && git clone https://github.com/Kurausukun/mother3 && git clone https://github.com/pret/pmd-red
+RUN cd /pretrepos/pokeemerald && make tools && cd /pretrepos/pokeruby && make tools && cd /pretrepos/pokefirered && make tools && cd /pretrepos/mother3 && make tools && cd /pretrepos/pmd-red && make tools
 RUN mkdir -p /frontends
 COPY pycc.py /frontends/
 COPY pycat.py /frontends/
