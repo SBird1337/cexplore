@@ -34,11 +34,11 @@ cpp_args = ["cpp", "-nostdinc", "-undef"]
 # Add Block Includes and Quote Includes
 if args.qinclude:
     for q in args.qinclude:
-    	cpp_args += ["-iquote", q]
+        cpp_args += ["-iquote", q]
 
 if args.binclude:
     for b in args.binclude:
-    	cpp_args += ["-I", b]
+        cpp_args += ["-I", b]
 
 cpp_args += [source, "-o", source+".i"]
 subprocess.call(cpp_args)
@@ -50,7 +50,7 @@ else:
         subprocess.call([args.cc1] + remainder[0:-1], stdin=a)
 
 if os.path.exists(source+'.i'):
-	os.remove(source+'.i')
+    os.remove(source+'.i')
 '''
 source = sys.argv[-1]
 subprocess.call(["cpp", "-nostdinc", "-undef", "-iquote", repopath + "include" , "-I", agbccpath + "agbcc", "-I", agbccpath + "agbcc/include", source, "-o", source+".i"])
